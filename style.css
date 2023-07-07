@@ -4,11 +4,27 @@
   padding: 0;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 main * {
   border: 1px solid #000;
+  
 }
 
 #calculator {
   width: 687px;
   height: 684px;
+}
+
+#inner-calculator {
+  flex-direction: column;
+}
+
+/* Modifiers */
+
+.flex {
+  display: flex;
 }
