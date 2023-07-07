@@ -3,3 +3,12 @@
   margin: 0;
   padding: 0;
 }
+
+main * {
+  border: 1px solid #000;
+}
+
+#calculator {
+  width: 687px;
+  height: 684px;
+}
