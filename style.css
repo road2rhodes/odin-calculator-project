@@ -28,6 +28,22 @@ main * {
   margin: 1em .25em;
 }
 
+.display {
+  height: 25%;
+}
+
+.buttons {
+  height: 75%;
+}
+
+.buttons-numbers {
+  width: 70%
+}
+
+.buttons-equal {
+  width: 30%;
+}
+
 /* Modifiers */
 
 .flex {
