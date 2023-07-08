@@ -20,3 +20,18 @@
 * Create function that routes input. It will input first number and then check for value of operator variable to plug in 2nd number.
 
 */
+
+// Calculator Display/Input Variables
+
+let num1;
+let num2;
+
+//// Operators
+
+const [add, subtract, multiply, divide] = ['+','-','x','÷'];
+
+
+// DOM Changes
+
+const displayEquation = document.querySelector('.equation');
+displayEquation.innerText = `5 ${divide} 5 = 25`;
