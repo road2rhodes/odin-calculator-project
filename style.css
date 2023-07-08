@@ -22,6 +22,8 @@ main * {
 #calculator {
   max-width: 687px;
   max-height: 684px;
+  min-width: 403px;
+  min-height: 400px;
   flex-direction: column;
   align-items: center;
 }
