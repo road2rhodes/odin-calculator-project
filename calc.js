@@ -23,15 +23,23 @@
 
 // Calculator Display/Input Variables
 
-let num1;
-let num2;
+let num1 = '';
+let num2 = '';
 
 //// Operators
 
-const [add, subtract, multiply, divide] = ['+','-','x','÷'];
+const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
 
 
 // DOM Changes
 
 const displayEquation = document.querySelector('.equation');
-displayEquation.innerText = `5 ${divide} 5 = 25`;
+displayEquation.innerText = `${num1}${operator}${num2}`;
+
+const HELLO = () => alert('Hello');
+
+const number7 = document.querySelector('.input-7');
+number7.addEventListener('click', HELLO);
+
+const number6 = document.querySelector('.input-6');
+number6.addEventListener('click', HELLO);
