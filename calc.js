@@ -32,8 +32,10 @@ const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
 
 // DOM Changes
 
-const updateDisplay = () => displayEquation.innerText = `${num1}${operator}${num2}`;
 const displayEquation = document.querySelector('.equation');
+
+const updateDisplay = () => displayEquation.innerText = `${num1}${operator}${num2}`;
+
 
 // Input buttons
 
