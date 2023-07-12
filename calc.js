@@ -30,13 +30,19 @@ let num2 = '';
 
 const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
 
+// Input Function
+
+grabButtonValues() {
+  
+}
+
 
 // DOM Changes
 
 const displayEquation = document.querySelector('.equation');
 displayEquation.innerText = `${num1}${operator}${num2}`;
 
-const HELLO = () => alert('Hello');
+const HELLO = () => num1 = prompt('Give me a number')
 
 const number7 = document.querySelector('.input-7');
 number7.addEventListener('click', HELLO);
