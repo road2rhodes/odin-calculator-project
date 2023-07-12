@@ -39,16 +39,16 @@ const updateDisplay = () => displayEquation.innerText = `${num1}${operator}${num
 
 // Input buttons
 
-num1 = document.querySelector('.input-7').addEventListener('click',grabButtonValues)
+const inputButtons = document.querySelectorAll('.number');
+
+inputButtons.forEach(button => button.addEventListener('click',grabButtonValues))
 
 // Input Function
 
 function grabButtonValues() {
-
-if (!num1) {
+  
   num1 = this.value;
   updateDisplay();
-}
 
 }
 
