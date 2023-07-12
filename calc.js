@@ -30,22 +30,21 @@ let num2 = '';
 
 const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
 
-// Input Function
-
-grabButtonValues() {
-  
-}
-
-
 // DOM Changes
 
 const displayEquation = document.querySelector('.equation');
 displayEquation.innerText = `${num1}${operator}${num2}`;
 
-const HELLO = () => num1 = prompt('Give me a number')
+// Input buttons
 
-const number7 = document.querySelector('.input-7');
-number7.addEventListener('click', HELLO);
+num1 = document.querySelector('.input-7').addEventListener('click',grabButtonValues)
 
-const number6 = document.querySelector('.input-6');
-number6.addEventListener('click', HELLO);
+// Input Function
+
+function grabButtonValues() {
+
+if (!num1) return num1 = this.value;
+
+}
+
+
