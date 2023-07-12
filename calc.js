@@ -32,8 +32,8 @@ const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
 
 // DOM Changes
 
+const updateDisplay = () => displayEquation.innerText = `${num1}${operator}${num2}`;
 const displayEquation = document.querySelector('.equation');
-displayEquation.innerText = `${num1}${operator}${num2}`;
 
 // Input buttons
 
@@ -43,7 +43,10 @@ num1 = document.querySelector('.input-7').addEventListener('click',grabButtonVal
 
 function grabButtonValues() {
 
-if (!num1) return num1 = this.value;
+if (!num1) {
+  num1 = this.value;
+  updateDisplay();
+}
 
 }
 
