@@ -4,9 +4,12 @@
   padding: 0;
 }
 
+/* Blocks */
+
 body {
   width: 100vw;
   height: 100vh;
+  font-size: 28px;
 }
 
 
@@ -39,15 +42,15 @@ main * {
   height: 25%;
 }
 
-.buttons {
+.btns {
   height: 75%;
 }
 
-.buttons-numbers {
+.btns-num-container {
   width: 70%
 }
 
-.buttons-equal {
+.btns-operators-container {
   width: 30%;
 }
 
