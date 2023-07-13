@@ -28,7 +28,9 @@ let num2 = '';
 
 //// Operators
 
-const [add, subtract, multiply, divide, operator] = ['+','-','x','÷',''];
+let operator = ''
+
+const [add, subtract, multiply, divide] = ['+','-','x','÷'];
 
 // DOM Changes
 
@@ -54,5 +56,16 @@ function grabNumberValues() {
   updateDisplay();
 
 }
+
+function grabOperatorValues() {
+
+  num1
+  ? num2 = this.value
+  : num1 = this.value
+
+  updateDisplay();
+
+}
+
 
 
