@@ -22,6 +22,10 @@ main * {
   
 }
 
+button {
+  font-size: 1.5em;
+}
+
 #calculator {
   max-width: 687px;
   max-height: 684px;
