@@ -63,9 +63,9 @@ operatorButtons.forEach(button => button.addEventListener('click',grabOperatorVa
 
 function grabNumberValues() {
 
-  num1
-  ? num2 = this.value
-  : num1 = this.value
+  operator === ''
+  ? num1 += this.value
+  : num2 += this.value
 
   updateDisplay();
 
