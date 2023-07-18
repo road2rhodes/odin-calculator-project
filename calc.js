@@ -25,14 +25,13 @@
 
 const calculator = {
   operators: {
-    add(a,b) {return a + b},
-    subtract(a,b) {return a - b},
-    multiply(a,b) {return a * b},
-    divide(a,b) {return a / b},
-    exponentiation(a,b) {return a ** b}
+    add: {symbol: "+", function(a,b) {return a + b}},
+    subtract: {symbol: "-", function(a,b) {return a - b}},
+    multiply: {symbol: "x", function(a,b) {return a * b}},
+    divide: {symbol: "÷", function(a,b) {return a / b}},
+    exponentiate: {symbol: "^", function(a,b) {return a ** b}},
   }
 }
-
 
 let num1 = '';
 let num2 = '';
@@ -41,7 +40,7 @@ let num2 = '';
 
 let operator = ''
 
-// const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
+const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
 
 // DOM Changes
 
