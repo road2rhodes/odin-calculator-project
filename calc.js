@@ -53,7 +53,11 @@ const updateDisplay = () => displayEquation.innerText = `${num1}${operator}${num
 
 const inputNumButtons = document.querySelectorAll('.number');
 
+const operatorButtons = document.querySelectorAll('.operators');
+
 inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValues))
+
+operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
 
 // Input Function
 
@@ -69,11 +73,28 @@ function grabNumberValues() {
 
 function grabOperatorValues() {
 
-  num1
-  ? num2 = this.value
-  : num1 = this.value
+  switch (this.value) {
+    case 'add': operator = calculator.operators.add.symbol;
+    break;
 
-  updateDisplay();
+    case 'subtract': operator = calculator.operators.subtract.symbol;
+    break;
+
+    case 'multiply': operator = calculator.operators.multiply.symbol
+    break;
+
+    case 'divide': operator = calculator.operators.divide.symbol;
+    break;
+
+    case 'exponentiate': operator = calculator.operators.exponentiate.symbol;
+    break;
+
+    default:
+      operator = '';
+
+  }
+
+  updateDisplay()
 
 }
 
