@@ -37,7 +37,7 @@ const calculator = {
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
 
-  calculate() {
+  operate() {
 
     switch (operator) {
 
@@ -75,7 +75,7 @@ const calculator = {
 
 // Deconstructed variables for ease/readability
 
-const { updateDisplay, calculate } = calculator;
+const { updateDisplay, operate } = calculator;
 
 let num1 = '';
 let num2 = '';
@@ -103,7 +103,7 @@ inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValu
 operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
 
 const equalSignButton = document.getElementById('equals')
-      equalSignButton.addEventListener('click', calculator.calculate)
+      equalSignButton.addEventListener('click', calculator.operate)
 
 // Input Function
 
