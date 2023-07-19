@@ -106,14 +106,21 @@ function grabNumberValues() {
   ? num1 += this.value
   : num1 === '' ? num1 += this.value : num2 += this.value;
 
+  
+
   updateDisplay();
 
 }
 
 function grabOperatorValues() {
 
+  if (num1 === '') {
+    alert('Please enter a starting number for equation.');
+    operator = '';
+  }
+  else {
   operator = calculator.operators[this.value].symbol;
-  updateDisplay()
+  updateDisplay();}
 
 }
 
