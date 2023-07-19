@@ -98,7 +98,7 @@ inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValu
 operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
 
 const equalSignButton = document.getElementById('equals')
-      equalSignButton.addEventListener('click', calculate())
+      equalSignButton.addEventListener('click', calculate)
 
 // Input Function
 
