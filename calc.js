@@ -25,6 +25,7 @@
 
 const calculator = {
   operators: {
+    
     add: {symbol: "+", function(a,b) {return a + b}},
     subtract: {symbol: "-", function(a,b) {return a - b}},
     multiply: {symbol: "x", function(a,b) {return a * b}},
@@ -35,15 +36,31 @@ const calculator = {
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   calcuate() {
+
+    let result = 0;
+
     switch (operator) {
-      case '+': return calculator.operators.add.function(parseInt(num1),parseInt(num2));
-      case '-': return calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
-      case 'x': return calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
-      case '÷': return calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
-      case '^': return calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+
+      case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
+      break;
+
+      case '-': this.result = calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
+      break;
+
+      case 'x': this.result = calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
+      break;
+
+      case '÷': this.result = calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
+      break;
+
+      case '^': this.result = calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+      break;
       
     }
-  }
+  },
+
+  result: 0,
+
 }
 
 const { updateDisplay } = calculator;
