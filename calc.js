@@ -38,7 +38,7 @@ const calculator = {
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResults() {displayResult.innerText = this.result},
 
-  calculate() {
+  calculate(operator) {
 
     switch (operator) {
 
@@ -112,27 +112,7 @@ function grabNumberValues() {
 
 function grabOperatorValues() {
 
-  switch (this.value) {
-    case 'add': operator = calculator.operators.add.symbol;
-    break;
-
-    case 'subtract': operator = calculator.operators.subtract.symbol;
-    break;
-
-    case 'multiply': operator = calculator.operators.multiply.symbol
-    break;
-
-    case 'divide': operator = calculator.operators.divide.symbol;
-    break;
-
-    case 'exponentiate': operator = calculator.operators.exponentiate.symbol;
-    break;
-
-    default:
-      operator = '';
-
-  }
-
+  operator = calculator.operators[this.value].symbol;
   updateDisplay()
 
 }
