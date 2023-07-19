@@ -38,24 +38,32 @@ const calculator = {
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResults() {displayResult.innerText = this.result},
 
-  calculate(operator) {
+  calculate() {
 
     switch (operator) {
 
       case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
+      console.log(this.result);
       break;
 
       case '-': this.result = calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
+      console.log(this.result);
       break;
 
       case 'x': this.result = calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
+      console.log(this.result);
       break;
 
       case '÷': this.result = calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
+      console.log(this.result);
       break;
 
       case '^': this.result = calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+      console.log(this.result);
       break;
+
+      default:
+        alert('No bueno');
       
     }
 
