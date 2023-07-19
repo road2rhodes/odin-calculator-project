@@ -104,7 +104,7 @@ function grabNumberValues() {
 
   operator === ''
   ? num1 += this.value
-  : num2 += this.value
+  : num1 === '' ? num1 += this.value : num2 += this.value;
 
   updateDisplay();
 
