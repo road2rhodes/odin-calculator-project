@@ -31,7 +31,19 @@ const calculator = {
     divide: {symbol: "÷", function(a,b) {return a / b}},
     exponentiate: {symbol: "^", function(a,b) {return a ** b}},
   },
-  updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`}
+
+
+  updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
+  calcuate() {
+    switch (operator) {
+      case '+': return calculator.operators.add.function(parseInt(num1),parseInt(num2));
+      case '-': return calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
+      case 'x': return calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
+      case '÷': return calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
+      case '^': return calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+      
+    }
+  }
 }
 
 const { updateDisplay } = calculator;
