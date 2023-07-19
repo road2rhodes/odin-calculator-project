@@ -36,7 +36,6 @@ const calculator = {
 
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
-  updateResults() {displayResult.innerText = this.result},
 
   calculate() {
 
@@ -67,10 +66,10 @@ const calculator = {
       
     }
 
-    calculator.updateResults();
+    displayResult.innerText = this.result
   },
 
-  result: 0,
+  result: 0
 
 }
 
