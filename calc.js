@@ -24,8 +24,9 @@
 // Calculator Display/Input Variables
 
 const calculator = {
+
   operators: {
-    
+
     add: {symbol: "+", function(a,b) {return a + b}},
     subtract: {symbol: "-", function(a,b) {return a - b}},
     multiply: {symbol: "x", function(a,b) {return a * b}},
@@ -35,6 +36,7 @@ const calculator = {
 
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
+  updateResults() {displayResult.innerText = this.result},
   calcuate() {
 
     let result = 0;
@@ -57,6 +59,8 @@ const calculator = {
       break;
       
     }
+
+    this.updateResults();
   },
 
   result: 0,
@@ -77,6 +81,7 @@ const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
 // DOM Changes
 
 const displayEquation = document.querySelector('.equation');
+const displayResult = document.querySelector('.result');
 
 
 // Input buttons
