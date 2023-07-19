@@ -40,8 +40,6 @@ const calculator = {
 
   calculate() {
 
-    let result = 0;
-
     switch (operator) {
 
       case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
@@ -98,7 +96,7 @@ inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValu
 operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
 
 const equalSignButton = document.getElementById('equals')
-      equalSignButton.addEventListener('click', calculate)
+      equalSignButton.addEventListener('click', calculator.calculate)
 
 // Input Function
 
