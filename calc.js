@@ -61,14 +61,16 @@ const calculator = {
       
     }
 
-    this.updateResults();
+    calculator.updateResults();
   },
 
   result: 0,
 
 }
 
-const { updateDisplay } = calculator;
+// Deconstructed variables for ease/readability
+
+const { updateDisplay, calculate } = calculator;
 
 let num1 = '';
 let num2 = '';
@@ -96,7 +98,7 @@ inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValu
 operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
 
 const equalSignButton = document.getElementById('equals')
-      equalSignButton.addEventListener('click', calculator.calculate())
+      equalSignButton.addEventListener('click', calculate())
 
 // Input Function
 
