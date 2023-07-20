@@ -36,7 +36,7 @@ const calculator = {
 
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
-  updateResult() {displayResult.innerText = this.result},
+  updateResult() {displayResult.innerText = `${this.result}`},
   clearDisplay() {
     num1 = num2 = operator = this.result = ''; calculator.updateDisplay();
     calculator.updateResult();
@@ -48,29 +48,24 @@ const calculator = {
 
       case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
-      console.log(this.result);
-      break;
+      return this.result
 
       case '-': this.result = calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
       ;
       displayResult.innerText = this.result;
-      console.log(this.result);
-      break;
+      return this.result
 
       case 'x': this.result = calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
-      console.log(this.result);
-      break;
+      return this.result;
 
       case '÷': this.result = calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
       displayResult.innerText = this.result;
-      console.log(this.result);
-      break;
+      return this.result
 
       case '^': this.result = calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
-      console.log(this.result);
-      break;
+      return this.result
 
       default:
         alert('No bueno');
@@ -80,7 +75,7 @@ const calculator = {
     
   },
 
-  result: ''
+  result: 0
 
 }
 
@@ -126,6 +121,8 @@ function grabNumberValues() {
   operator === ''
   ? num1 += this.value
   : num1 === '' ? num1 += this.value : num2 += this.value;
+
+  // if (num1 && operator && num2) num1 = calculator.calculate()
 
   
 
