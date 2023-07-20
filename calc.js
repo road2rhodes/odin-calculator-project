@@ -23,6 +23,13 @@
 
 // Calculator Display/Input Variables
 
+let num1 = '';
+let num2 = '';
+
+//// Operators
+
+let operator = ''
+
 const calculator = {
 
   operators: {
@@ -74,6 +81,11 @@ const calculator = {
 
     
   },
+  Operator() {
+    // if !num1 & !operator, num1 === this.value
+    // if num1 && operator, num2 === this.value
+    // 
+  },
 
   result: 0
 
@@ -83,12 +95,7 @@ const calculator = {
 
 const { updateDisplay, operate } = calculator;
 
-let num1 = '';
-let num2 = '';
 
-//// Operators
-
-let operator = ''
 
 const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
 
@@ -122,8 +129,10 @@ function grabNumberValues() {
   ? num1 += this.value
   : num1 === '' ? num1 += this.value : num2 += this.value;
 
-  // if (num1 && operator && num2) num1 = calculator.calculate()
-
+//   if (num1 && operator && num2) {
+//     num1 = calculator.operate();
+//     num2 = '';
+// }
   
 
   updateDisplay();
