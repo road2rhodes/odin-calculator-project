@@ -36,28 +36,39 @@ const calculator = {
 
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
+  updateResult() {displayResult.innerText = this.result},
+  clearDisplay() {
+    num1 = num2 = operator = this.result = ''; calculator.updateDisplay();
+    calculator.updateResult();
+  },
 
   operate() {
 
     switch (operator) {
 
       case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
+      displayResult.innerText = this.result;
       console.log(this.result);
       break;
 
       case '-': this.result = calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
+      ;
+      displayResult.innerText = this.result;
       console.log(this.result);
       break;
 
       case 'x': this.result = calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
+      displayResult.innerText = this.result;
       console.log(this.result);
       break;
 
       case '÷': this.result = calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
+      displayResult.innerText = this.result;
       console.log(this.result);
       break;
 
       case '^': this.result = calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+      displayResult.innerText = this.result;
       console.log(this.result);
       break;
 
@@ -66,10 +77,10 @@ const calculator = {
       
     }
 
-    displayResult.innerText = this.result
+    
   },
 
-  result: 0
+  result: ''
 
 }
 
@@ -104,6 +115,9 @@ operatorButtons.forEach(button => button.addEventListener('click',grabOperatorVa
 
 const equalSignButton = document.getElementById('equals')
       equalSignButton.addEventListener('click', calculator.operate)
+
+const acButton = document.querySelector('.input-clear');
+      acButton.addEventListener('click',calculator.clearDisplay)
 
 // Input Function
 
