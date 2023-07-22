@@ -42,6 +42,29 @@ const CALCULATOR = {
     exponentiate: {symbol: "^", function(a,b) {return a ** b}},
   },
 
+  displayEquation(equation) {
+
+    num1 = operator = num2 = '';
+
+    if (!num1) {
+      return alert('Please enter a starting number for equation.');
+    }
+    else {
+    operator = calculator.operators[this.value].symbol;
+    updateDisplay();}
+  
+
+    operator
+    ? num2 += this.value
+    : num1 += this.value
+
+
+    equation = `${num1} ${operator} ${num2}`
+
+    displayEquationDiv.innerText = equation;
+  },
+  
+
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResult(result) {displayResult.innerText = `${result}`},
@@ -126,7 +149,7 @@ const operatorButtons = document.querySelectorAll('.operators');
 
 inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValues))
 
-operatorButtons.forEach(button => button.addEventListener('click',grabOperatorValues))
+operatorButtons.forEach(button => button.addEventListener('click',CALCULATOR.displayEquation))
 
 const equalSignButton = document.getElementById('equals')
       equalSignButton.addEventListener('click', calculator.operate)
@@ -136,12 +159,6 @@ const acButton = document.querySelector('.input-clear');
 
 // Input Function
 
-calculator.pro
-
-function displayEquation(equation) {
-
-  displayEquationDiv.innerText = equation;
-}
 
 function grabNumberValues() {
 
