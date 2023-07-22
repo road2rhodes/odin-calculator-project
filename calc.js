@@ -23,13 +23,11 @@
 
 // Calculator Display/Input Variables
 
-let num1 = '';
-let num2 = '';
-let num3 = ''; // only exists as reference for chained operators
+let num1, num2, operator;
+
+num1 = num2 = operator = '';
 
 //// Operators
-
-let operator = ''
 
 const CALCULATOR = {
 
@@ -43,8 +41,6 @@ const CALCULATOR = {
   },
 
   displayEquation(equation) {
-
-    num1 = operator = num2 = '';
 
     if (!num1) {
       return alert('Please enter a starting number for equation.');
