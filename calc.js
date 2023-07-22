@@ -33,11 +33,11 @@ const CALCULATOR = {
 
   operators: {
 
-    add: {symbol: "+", function(a,b) {return a + b}},
-    subtract: {symbol: "-", function(a,b) {return a - b}},
-    multiply: {symbol: "x", function(a,b) {return a * b}},
-    divide: {symbol: "÷", function(a,b) {return a / b}},
-    exponentiate: {symbol: "^", function(a,b) {return a ** b}},
+    add: {symbol: "+", function(a,b) {return parseInt(a) + parseInt(b)}},
+    subtract: {symbol: "-", function(a,b) {return parseInt(a) - parseInt(b)}},
+    multiply: {symbol: "x", function(a,b) {return parseInt(a) * parseInt(b)}},
+    divide: {symbol: "÷", function(a,b) {return parseInt(a) / parseInt(b)}},
+    exponentiate: {symbol: "^", function(a,b) {return parseInt(a) ** parseInt(b)}},
   },
 
   displayEquation() {
@@ -70,6 +70,8 @@ const CALCULATOR = {
 
     let calcOperation;
 
+    if (!num1 || !num2 || !operator) return alert('No equation found');
+
     for (let op in CALCULATOR.operators) {
 
       console.log(CALCULATOR.operators[op].function)
@@ -78,7 +80,7 @@ const CALCULATOR = {
       calcOperation = CALCULATOR.operators[op].function;
     }
 
-    displayResultDiv.innerText = calcOperation(parseInt(num1), parseInt(num2))
+    displayResultDiv.innerText = calcOperation(num1, num2)
 
     // switch (operator) {
 
