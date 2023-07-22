@@ -62,8 +62,8 @@ const CALCULATOR = {
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResult(result) {displayResult.innerText = `${result}`},
   clearDisplay() {
-    num1 = num2 = operator = this.result = ''; CALCULATOR.updateDisplay();
-    CALCULATOR.updateResult();
+    num1 = num2 = operator = this.result = ''; 
+    displayEquationDiv.innerText = ``
   },
  
   operate(num1, operation, num2) {
@@ -157,37 +157,41 @@ const acButton = document.querySelector('.input-clear');
 
 
 window.addEventListener('keydown', (event) => {
-  let operatorValue;
+  if (event.key === 'Escape') {
+    CALCULATOR.clearDisplay();
+  } else {
+    let operatorValue;
   
-  switch (event.key) {
-    case '+':
-      operatorValue = 'add';
-      break;
-    case '-':
-      operatorValue = 'subtract';
-      break;
-    case '*':
-      operatorValue = 'multiply';
-      break;
-    case '/':
-      operatorValue = 'divide';
-      break;
-    case '^':
-      operatorValue = 'exponentiate';
-      break;
-    default:
-      if (event.key >= '0' && event.key <= '9') {
-        const numberButton = document.querySelector(`[value="${event.key}"]`);
-        if (numberButton) {
-          displayEquation.call(numberButton);
+    switch (event.key) {
+      case '+':
+        operatorValue = 'add';
+        break;
+      case '-':
+        operatorValue = 'subtract';
+        break;
+      case '*':
+        operatorValue = 'multiply';
+        break;
+      case '/':
+        operatorValue = 'divide';
+        break;
+      case '^':
+        operatorValue = 'exponentiate';
+        break;
+      default:
+        if (event.key >= '0' && event.key <= '9') {
+          const numberButton = document.querySelector(`[value="${event.key}"]`);
+          if (numberButton) {
+            displayEquation.call(numberButton);
+          }
         }
-      }
-      return;
-  }
+        return;
+    }
   
-  const operatorButton = document.querySelector(`[value="${operatorValue}"]`);
-  if (operatorButton) {
-    displayEquation.call(operatorButton);
+    const operatorButton = document.querySelector(`[value="${operatorValue}"]`);
+    if (operatorButton) {
+      displayEquation.call(operatorButton);
+    }
   }
 });
   
