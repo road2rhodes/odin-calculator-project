@@ -53,7 +53,7 @@ const CALCULATOR = {
       operator = CALCULATOR.operators[this.value].symbol;
     }
 
-    displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
+    return displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
 
   },
   
@@ -66,57 +66,51 @@ const CALCULATOR = {
     displayEquationDiv.innerText = ``
   },
  
-  operate(num1, operation, num2) {
+  operate() {
 
-    // operation = CALCULATOR.operators[]
+    let calcOperation;
 
-    // let result = num1 num2
+    for (let op in CALCULATOR.operators) {
 
-    // updateResult(result);
+      console.log(CALCULATOR.operators[op].function)
 
-    // for (let operator in CALCULATOR.operators) {
-    //   if 
-    // }
-
-    switch (operator) {
-
-      // operator
-
-      case '+': this.result = CALCULATOR.operators.add.function(parseInt(num1),parseInt(num2));
-      displayResult.innerText = this.result;
-      return this.result
-
-      case '-': this.result = CALCULATOR.operators.subtract.function(parseInt(num1),parseInt(num2));
-      ;
-      displayResult.innerText = this.result;
-      return this.result
-
-      case 'x': this.result = CALCULATOR.operators.multiply.function(parseInt(num1),parseInt(num2));
-      displayResult.innerText = this.result;
-      return this.result;
-
-      case '÷': this.result = CALCULATOR.operators.divide.function(parseInt(num1),parseInt(num2));;
-      displayResult.innerText = this.result;
-      return this.result
-
-      case '^': this.result = CALCULATOR.operators.exponentiate.function(parseInt(num1),parseInt(num2));
-      displayResult.innerText = this.result;
-      return this.result
-
-      default:
-        alert('No bueno');
-      
+      if (operator === CALCULATOR.operators[op].symbol) 
+      calcOperation = CALCULATOR.operators[op].function;
     }
 
+    displayResultDiv.innerText = calcOperation(parseInt(num1), parseInt(num2))
+
+    // switch (operator) {
+
+    //   // operator
+
+    //   case '+': this.result = CALCULATOR.operators.add.function(parseInt(num1),parseInt(num2));
+    //   displayResult.innerText = this.result;
+    //   return this.result
+
+    //   case '-': this.result = CALCULATOR.operators.subtract.function(parseInt(num1),parseInt(num2));
+    //   ;
+    //   displayResult.innerText = this.result;
+    //   return this.result
+
+    //   case 'x': this.result = CALCULATOR.operators.multiply.function(parseInt(num1),parseInt(num2));
+    //   displayResult.innerText = this.result;
+    //   return this.result;
+
+    //   case '÷': this.result = CALCULATOR.operators.divide.function(parseInt(num1),parseInt(num2));;
+    //   displayResult.innerText = this.result;
+    //   return this.result
+
+    //   case '^': this.result = CALCULATOR.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+    //   displayResult.innerText = this.result;
+    //   return this.result
+
+    //   default:
+    //     alert('No bueno');
+      
+    // }
     
   },
-  Operator() {
-    // if !num1 & !operator, num1 === this.value
-    // if num1 && operator, num2 === this.value
-    // 
-  },
-
-  result: 0
 
 }
 
