@@ -43,9 +43,11 @@ const CALCULATOR = {
   displayEquation() {
 
     if (this.value.length <= 1) { // Catches number inputs
+
       operator
       ? num2 += this.value
       : num1 += this.value
+      
     }
     else { // catches operators inputs
       operator = CALCULATOR.operators[this.value].symbol;
@@ -138,7 +140,10 @@ const inputNumButtons = document.querySelectorAll('.number');
 
 const operatorButtons = document.querySelectorAll('.operators');
 
-inputNumButtons.forEach(button => button.addEventListener('click',displayEquation))
+inputNumButtons.forEach(button => {
+  button.addEventListener('click',displayEquation);
+  // button.addEventListener('keydown', (event) => if (event.key ===)
+})
 
 operatorButtons.forEach(button => button.addEventListener('click',displayEquation))
 
@@ -147,6 +152,45 @@ const equalSignButton = document.getElementById('equals')
 
 const acButton = document.querySelector('.input-clear');
       acButton.addEventListener('click',CALCULATOR.clearDisplay)
+
+// Allows number input via keys
+
+
+window.addEventListener('keydown', (event) => {
+  let operatorValue;
+  
+  switch (event.key) {
+    case '+':
+      operatorValue = 'add';
+      break;
+    case '-':
+      operatorValue = 'subtract';
+      break;
+    case '*':
+      operatorValue = 'multiply';
+      break;
+    case '/':
+      operatorValue = 'divide';
+      break;
+    case '^':
+      operatorValue = 'exponentiate';
+      break;
+    default:
+      if (event.key >= '0' && event.key <= '9') {
+        const numberButton = document.querySelector(`[value="${event.key}"]`);
+        if (numberButton) {
+          displayEquation.call(numberButton);
+        }
+      }
+      return;
+  }
+  
+  const operatorButton = document.querySelector(`[value="${operatorValue}"]`);
+  if (operatorButton) {
+    displayEquation.call(operatorButton);
+  }
+});
+  
 
 // Input Function
 
