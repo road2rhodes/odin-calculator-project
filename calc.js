@@ -25,12 +25,13 @@
 
 let num1 = '';
 let num2 = '';
+let num3 = ''; // only exists as reference for chained operators
 
 //// Operators
 
 let operator = ''
 
-const calculator = {
+const CALCULATOR = {
 
   operators: {
 
@@ -43,15 +44,27 @@ const calculator = {
 
 
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
-  updateResult() {displayResult.innerText = `${this.result}`},
+  updateResult(result) {displayResult.innerText = `${result}`},
   clearDisplay() {
     num1 = num2 = operator = this.result = ''; calculator.updateDisplay();
     calculator.updateResult();
   },
+ 
+  operate(num1, operation, num2) {
 
-  operate() {
+    // operation = calculator.operators[]
+
+    // let result = num1 num2
+
+    // updateResult(result);
+
+    // for (let operator in calculator.operators) {
+    //   if 
+    // }
 
     switch (operator) {
+
+      // operator
 
       case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
@@ -101,8 +114,8 @@ const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
 
 // DOM Changes
 
-const displayEquation = document.querySelector('.equation');
-const displayResult = document.querySelector('.result');
+const displayEquationDiv = document.querySelector('.equation');
+const displayResultDiv = document.querySelector('.result');
 
 
 // Input buttons
@@ -123,16 +136,24 @@ const acButton = document.querySelector('.input-clear');
 
 // Input Function
 
+calculator.pro
+
+function displayEquation(equation) {
+
+  displayEquationDiv.innerText = equation;
+}
+
 function grabNumberValues() {
 
   operator === ''
   ? num1 += this.value
   : num1 === '' ? num1 += this.value : num2 += this.value;
 
-//   if (num1 && operator && num2) {
-//     num1 = calculator.operate();
-//     num2 = '';
-// }
+  if (num1 && operator && num2) {
+    num3 = calculator.operate();
+    num1 = num3;
+    num2 = '';
+}
   
 
   updateDisplay();
