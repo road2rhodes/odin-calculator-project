@@ -74,10 +74,10 @@ const CALCULATOR = {
 
     for (let op in CALCULATOR.operators) {
 
-      console.log(CALCULATOR.operators[op].function)
-
       if (operator === CALCULATOR.operators[op].symbol) 
+
       calcOperation = CALCULATOR.operators[op].function;
+
     }
 
     displayResultDiv.innerText = calcOperation(num1, num2)
@@ -155,6 +155,8 @@ const acButton = document.querySelector('.input-clear');
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     CALCULATOR.clearDisplay();
+  } else if (event.key === 'Enter') {
+    CALCULATOR.operate();
   } else {
     let operatorValue;
   
