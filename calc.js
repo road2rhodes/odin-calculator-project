@@ -40,24 +40,19 @@ const CALCULATOR = {
     exponentiate: {symbol: "^", function(a,b) {return a ** b}},
   },
 
-  displayEquation(equation) {
+  displayEquation() {
 
-    if (!num1) {
-      return alert('Please enter a starting number for equation.');
+    if (this.value.length <= 1) { // Catches number inputs
+      operator
+      ? num2 += this.value
+      : num1 += this.value
     }
-    else {
-    operator = calculator.operators[this.value].symbol;
-    updateDisplay();}
-  
+    else { // catches operators inputs
+      operator = CALCULATOR.operators[this.value].symbol;
+    }
 
-    operator
-    ? num2 += this.value
-    : num1 += this.value
+    displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
 
-
-    equation = `${num1} ${operator} ${num2}`
-
-    displayEquationDiv.innerText = equation;
   },
   
 
@@ -65,19 +60,19 @@ const CALCULATOR = {
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResult(result) {displayResult.innerText = `${result}`},
   clearDisplay() {
-    num1 = num2 = operator = this.result = ''; calculator.updateDisplay();
-    calculator.updateResult();
+    num1 = num2 = operator = this.result = ''; CALCULATOR.updateDisplay();
+    CALCULATOR.updateResult();
   },
  
   operate(num1, operation, num2) {
 
-    // operation = calculator.operators[]
+    // operation = CALCULATOR.operators[]
 
     // let result = num1 num2
 
     // updateResult(result);
 
-    // for (let operator in calculator.operators) {
+    // for (let operator in CALCULATOR.operators) {
     //   if 
     // }
 
@@ -85,24 +80,24 @@ const CALCULATOR = {
 
       // operator
 
-      case '+': this.result = calculator.operators.add.function(parseInt(num1),parseInt(num2));
+      case '+': this.result = CALCULATOR.operators.add.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
       return this.result
 
-      case '-': this.result = calculator.operators.subtract.function(parseInt(num1),parseInt(num2));
+      case '-': this.result = CALCULATOR.operators.subtract.function(parseInt(num1),parseInt(num2));
       ;
       displayResult.innerText = this.result;
       return this.result
 
-      case 'x': this.result = calculator.operators.multiply.function(parseInt(num1),parseInt(num2));
+      case 'x': this.result = CALCULATOR.operators.multiply.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
       return this.result;
 
-      case '÷': this.result = calculator.operators.divide.function(parseInt(num1),parseInt(num2));;
+      case '÷': this.result = CALCULATOR.operators.divide.function(parseInt(num1),parseInt(num2));;
       displayResult.innerText = this.result;
       return this.result
 
-      case '^': this.result = calculator.operators.exponentiate.function(parseInt(num1),parseInt(num2));
+      case '^': this.result = CALCULATOR.operators.exponentiate.function(parseInt(num1),parseInt(num2));
       displayResult.innerText = this.result;
       return this.result
 
@@ -125,7 +120,7 @@ const CALCULATOR = {
 
 // Deconstructed variables for ease/readability
 
-const { updateDisplay, operate } = calculator;
+const { displayEquation, operate } = CALCULATOR;
 
 
 
@@ -143,15 +138,15 @@ const inputNumButtons = document.querySelectorAll('.number');
 
 const operatorButtons = document.querySelectorAll('.operators');
 
-inputNumButtons.forEach(button => button.addEventListener('click',grabNumberValues))
+inputNumButtons.forEach(button => button.addEventListener('click',displayEquation))
 
-operatorButtons.forEach(button => button.addEventListener('click',CALCULATOR.displayEquation))
+operatorButtons.forEach(button => button.addEventListener('click',displayEquation))
 
 const equalSignButton = document.getElementById('equals')
-      equalSignButton.addEventListener('click', calculator.operate)
+      equalSignButton.addEventListener('click', CALCULATOR.operate)
 
 const acButton = document.querySelector('.input-clear');
-      acButton.addEventListener('click',calculator.clearDisplay)
+      acButton.addEventListener('click',CALCULATOR.clearDisplay)
 
 // Input Function
 
@@ -163,7 +158,7 @@ function grabNumberValues() {
   : num1 === '' ? num1 += this.value : num2 += this.value;
 
   if (num1 && operator && num2) {
-    num3 = calculator.operate();
+    num3 = CALCULATOR.operate();
     num1 = num3;
     num2 = '';
 }
@@ -180,7 +175,7 @@ function grabOperatorValues() {
     operator = '';
   }
   else {
-  operator = calculator.operators[this.value].symbol;
+  operator = CALCULATOR.operators[this.value].symbol;
   updateDisplay();}
 
 }
