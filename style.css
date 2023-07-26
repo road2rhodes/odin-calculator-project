@@ -54,6 +54,7 @@ button {
 .display, .result {
   color: var(--black);
   background-color: var(--innerDisplayBgColor);
+  font-family: monospace;
 }
 .display {
   height: 25%;
