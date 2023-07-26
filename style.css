@@ -10,6 +10,7 @@
   --mainCalcColor: #252525;
   --accentCalcColor: #4b4b4b;
   --innerDisplayBgColor: rgb(245, 232, 117);
+  --buttonOutline: #adadad;
 }
 
 /* Blocks */
@@ -30,7 +31,7 @@ button {
   font-size: 1.5em;
   background-color: #808080;
   color: var(--white);
-  border: black;
+  border: 1px solid var(--buttonOutline);
 }
 
 #calculator {
