@@ -45,8 +45,9 @@ const CALCULATOR = {
   updateDisplay() {displayEquation.innerText = `${num1}${operator}${num2}`},
   updateResult(result) {displayResult.innerText = `${result}`},
   clearDisplay() {
-    num1 = num2 = operator = this.result = ''; 
-    displayEquationDiv.innerText = ``
+    num1 = num2 = operator =  ''; 
+    displayEquationDiv.innerText = '';
+    displayResultDiv.innerText = '';
   },
  
   operate() {
