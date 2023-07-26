@@ -55,6 +55,7 @@ button {
   color: var(--black);
   background-color: var(--innerDisplayBgColor);
   font-family: monospace;
+  overflow: hidden;
 }
 .display {
   height: 25%;
@@ -81,12 +82,14 @@ button {
   padding: 1rem;
   row-gap: 0.25rem;
   background-color: var(--accentCalcColor);
+  
 }
 
 .btns-num-container > div {
   flex: 1;
   display: flex;
   gap: .1em;
+
 }
 
 .btns-num-container > div > button{
