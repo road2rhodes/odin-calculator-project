@@ -23,9 +23,9 @@
 
 // Calculator Display/Input Variables
 
-let num1, num2, operator;
+let num1, num2, operator, result;
 
-num1 = num2 = operator = '';
+num1 = num2 = operator = result = '';
 
 //// Operators
 
@@ -50,7 +50,20 @@ const CALCULATOR = {
       
     }
     else { // catches operators inputs
+
+      if (!num1) return alert('Enter a starting value first')
+
+      if (result) {
+        operator = CALCULATOR.operators[this.value].symbol;
+        num1 = result; num2 = '';
+      } else if (num1 && operator && num2 && result) {
+        num1 = CALCULATOR.operate();
+        num2 = '';
+        operator = CALCULATOR.operators[this.value].symbol;
+      }
+
       operator = CALCULATOR.operators[this.value].symbol;
+
     }
 
     return displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
@@ -80,7 +93,11 @@ const CALCULATOR = {
 
     }
 
-    displayResultDiv.innerText = calcOperation(num1, num2)
+    result = calcOperation(num1, num2);
+
+    displayResultDiv.innerText = result;
+
+    return result;
 
     // switch (operator) {
 
