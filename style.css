@@ -5,7 +5,9 @@
 }
 
 :root {
+  --black: #000000;
   --white: #fffecf;
+  --innerDisplayBgColor: rgb(245, 232, 117);
 }
 
 /* Blocks */
@@ -47,9 +49,11 @@ button {
   width: 95%;
   height: 95%;
   margin: 1em .25em;
+  
 }
 .display, .result {
-  color: var(--white);
+  color: var(--black);
+  background-color: var(--innerDisplayBgColor);
 }
 .display {
   height: 25%;
