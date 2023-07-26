@@ -39,36 +39,6 @@ const CALCULATOR = {
     divide: {symbol: "÷", function(a,b) {return parseInt(a) / parseInt(b)}},
     exponentiate: {symbol: "^", function(a,b) {return parseInt(a) ** parseInt(b)}},
   },
-
-  displayEquation() {
-
-    if (this.value.length <= 1) { // Catches number inputs
-
-      operator
-      ? num2 += this.value
-      : num1 += this.value
-      
-    }
-    else { // catches operators inputs
-
-      if (!num1) return alert('Enter a starting value first')
-
-      if (result) {
-        operator = CALCULATOR.operators[this.value].symbol;
-        num1 = result; num2 = '';
-      } else if (num1 && operator && num2 && result) {
-        num1 = CALCULATOR.operate();
-        num2 = '';
-        operator = CALCULATOR.operators[this.value].symbol;
-      }
-
-      operator = CALCULATOR.operators[this.value].symbol;
-
-    }
-
-    return displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
-
-  },
   
 
 
@@ -129,13 +99,51 @@ const CALCULATOR = {
       
     // }
     
+  }, 
+  displayEquation() {
+
+    if (this.value.length <= 1) { // Catches number inputs
+
+      operator
+      ? num2 += this.value
+      : num1 += this.value
+      
+    }
+    else { // catches operators inputs
+
+      if (!num1) return alert('Enter a starting value first')
+
+      if (operator && num2) {
+        num1 = CALCULATOR.operate(num1, num2);
+        operator = CALCULATOR.operators[this.value].symbol
+        num2 = '';
+        CALCULATOR.updateDisplay();
+      }
+
+      operator = CALCULATOR.operators[this.value].symbol;
+
+      // if (result) {
+      //   operator = CALCULATOR.operators[this.value].symbol;
+      //   num1 = result; num2 = '';
+      // } else if (num1 && operator && num2 && result) {
+      //   num1 = CALCULATOR.operate();
+      //   num2 = '';
+      //   operator = CALCULATOR.operators[this.value].symbol;
+      // }
+
+      
+
+    }
+
+    return displayEquationDiv.innerText = `${num1} ${operator} ${num2}`
+
   },
 
 }
 
 // Deconstructed variables for ease/readability
 
-const { displayEquation, operate } = CALCULATOR;
+const { displayEquation } = CALCULATOR;
 
 
 
