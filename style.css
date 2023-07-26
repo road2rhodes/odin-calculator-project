@@ -55,6 +55,9 @@ button {
 }
 
 .btns-operators-container {
+  flex-direction: column;
+  padding: 1em;
+  row-gap: 0.5em;
   width: 30%;
 }
 
