@@ -61,6 +61,11 @@ button {
   width: 30%;
 }
 
+.equal-sign {
+  background-color: #ddc702;
+  flex: 2;
+}
+
 /* Modifiers */
 
 .display-flex {
