@@ -7,6 +7,7 @@
 :root {
   --black: #000000;
   --white: #fffecf;
+  --mainCalcColor: #252525;
   --innerDisplayBgColor: rgb(245, 232, 117);
 }
 
@@ -41,7 +42,7 @@ button {
   min-height: 400px;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(37, 37, 37);
+  background-color: var(--mainCalcColor);
 }
 
 .inner-calculator {
@@ -93,6 +94,10 @@ button {
   text-align: center;
 }
 
+.btns-num-container > div > button:active {
+  background-color: var(--white);
+  color: black;
+}
 
 .btns-operators-container {
   flex-direction: column;
