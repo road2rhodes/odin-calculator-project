@@ -12,11 +12,11 @@ const CALCULATOR = {
 
   operators: {
 
-    add: {symbol: "+", function(a,b) {return parseInt(a) + parseInt(b)}},
-    subtract: {symbol: "-", function(a,b) {return parseInt(a) - parseInt(b)}},
-    multiply: {symbol: "x", function(a,b) {return parseInt(a) * parseInt(b)}},
-    divide: {symbol: "÷", function(a,b) {return parseInt(a) / parseInt(b)}},
-    exponentiate: {symbol: "^", function(a,b) {return parseInt(a) ** parseInt(b)}},
+    add: {symbol: "+", function(a,b) {return parseFloat(a) + parseFloat(b)}},
+    subtract: {symbol: "-", function(a,b) {return parseFloat(a) - parseFloat(b)}},
+    multiply: {symbol: "x", function(a,b) {return parseFloat(a) * parseFloat(b)}},
+    divide: {symbol: "÷", function(a,b) {return parseFloat(a) / parseFloat(b)}},
+    exponentiate: {symbol: "^", function(a,b) {return parseFloat(a) ** parseFloat(b)}},
   },
   
 
