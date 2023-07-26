@@ -112,6 +112,7 @@ button {
 
 .equal-sign {
   background-color: #ddc702;
+  color: var(--black);
   flex: 2;
 }
 
