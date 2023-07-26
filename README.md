@@ -9,3 +9,6 @@ What did I learn during this process?
 - I refined my algorithm skills, trying to condense procedures when I can. For example, relying on length of a button's value to distinguish between number inputs and operator inputs in the same function.
 - I experimented with prototypes, though I did not end up using them in this project.
 - Of course, this required DOM manipulation. It still amazes how you can bring an otherwise static page to life.
+
+Issues to address?
+- Update the logic to handle when values are 0 (since 0 is falsy, thus triggering conditionals that are intended for empty strings)
