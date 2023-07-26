@@ -59,6 +59,11 @@ button {
 .display > div {
   width: 100%;
   height: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 1em;
+
 }
 .btns-all-container {
   height: 75%;
