@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+:root {
+  --white: #fffecf;
+}
+
 /* Blocks */
 
 body {
@@ -25,6 +29,7 @@ main * {
 button {
   font-size: 1.5em;
   background-color: #808080;
+  color: var(--white)
 }
 
 #calculator {
@@ -43,7 +48,9 @@ button {
   height: 95%;
   margin: 1em .25em;
 }
-
+.display, .result {
+  color: var(--white)
+}
 .display {
   height: 25%;
 }
