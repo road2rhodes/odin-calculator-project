@@ -70,7 +70,13 @@ button {
 }
 
 .btns-num-container {
-  width: 70%
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.btns-num-container > div {
+  flex: 1;
 }
 
 .btns-operators-container {
