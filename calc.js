@@ -12,12 +12,47 @@ let num1 = '',
 const CALCULATOR = {
 
   operators: {
+    equation: function (a, b, operator){
+      switch (operator) {
+      case "add": return parseFloat(a) + parseFloat(b);
+      break;
+      case "subtract": return a - b;
+      break;
+      case "multiply": return a * b;
+      break;
+      case "divide": return a / b;
+      break;
+      case "exponentiate": return a ** b;
+      break;
+      }
+    },
+    
+    add: {
+      symbol: "+", 
+      function: (a,b) => {
+        return CALCULATOR.operators.equation(a,b, "add")}
+          },
+    subtract: {
+      symbol: "-", 
+      function: (a,b) => {
+        return CALCULATOR.operators.equation(a,b, "subtract")}
+          },
+    multiply: {
+      symbol: "x", 
+      function: (a,b) => {
+        return CALCULATOR.operators.equation(a,b, "multiply")}
+          },
+    divide: {
+      symbol: "÷", 
+      function: (a,b) => {
+        return CALCULATOR.operators.equation(a,b, "divide")}
+          },
+    exponentiate: {
+      symbol: "^", 
+      function: (a,b) => {
+        return CALCULATOR.operators.equation(a,b, "exponentiate")}
+          },
 
-    add: {symbol: "+", function(a,b) {return parseFloat(a) + parseFloat(b)}},
-    subtract: {symbol: "-", function(a,b) {return parseFloat(a) - parseFloat(b)}},
-    multiply: {symbol: "x", function(a,b) {return parseFloat(a) * parseFloat(b)}},
-    divide: {symbol: "÷", function(a,b) {return parseFloat(a) / parseFloat(b)}},
-    exponentiate: {symbol: "^", function(a,b) {return parseFloat(a) ** parseFloat(b)}},
   },
   
 
@@ -36,15 +71,15 @@ const CALCULATOR = {
 
     if (!num1 || !num2 || !operator) return alert('No equation found');
 
-    for (let op in CALCULATOR.operators) {
+    for (let op in CALCULATOR.operators) { 
 
       if (operator === CALCULATOR.operators[op].symbol) 
 
-      calcOperation = CALCULATOR.operators[op].function;
+      result = CALCULATOR.operators[op].function(num1, num2);
 
     }
 
-    result = calcOperation(num1, num2);
+    // result = calcOperation(num1, num2);
 
     displayResultDiv.innerText = result;
 
