@@ -41,27 +41,27 @@ const CALCULATOR = {
       }
     },
     
-    add: {
+    [add]: {
       symbol: "+", 
       function: (a,b) => {
         return CALCULATOR.operators.equation(a,b, add)}
           },
-    subtract: {
+    [subtract]: {
       symbol: "-", 
       function: (a,b) => {
         return CALCULATOR.operators.equation(a,b, subtract)}
           },
-    multiply: {
+    [multiply]: {
       symbol: "x", 
       function: (a,b) => {
         return CALCULATOR.operators.equation(a,b, multiply)}
           },
-    divide: {
+    [divide]: {
       symbol: "÷", 
       function: (a,b) => {
         return CALCULATOR.operators.equation(a,b, divide)}
           },
-    exponentiate: {
+    [exponentiate]: {
       symbol: "^", 
       function: (a,b) => {
         return CALCULATOR.operators.equation(a,b, exponentiate)}
@@ -176,19 +176,19 @@ window.addEventListener('keydown', (event) => {
   
     switch (event.key) {
       case '+':
-        operatorValue = 'add';
+        operatorValue = add;
         break;
       case '-':
-        operatorValue = 'subtract';
+        operatorValue = subtract;
         break;
       case '*':
-        operatorValue = 'multiply';
+        operatorValue = multiply;
         break;
       case '/':
-        operatorValue = 'divide';
+        operatorValue = divide;
         break;
       case '^':
-        operatorValue = 'exponentiate';
+        operatorValue = exponentiate;
         break;
       default:
         if (event.key >= '0' && event.key <= '9') {
