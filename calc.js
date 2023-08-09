@@ -20,11 +20,6 @@ const exponentiate = document.getElementById('exponents').value;
 
 const CALCULATOR = {
 
-  operationValues: {
-    add: document.getElementById('addition').value,
-    subtract: document.getElementById('subtraction').value,
-  },
-
   operators: {
     equation: function (a, b, operator){
       switch (operator) {
