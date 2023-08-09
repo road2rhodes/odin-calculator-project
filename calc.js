@@ -7,22 +7,36 @@ let num1 = '',
     operator = '', 
     result = '';
 
+// Key values for operations
+
+const add = document.getElementById('addition').value;
+const subtract = document.getElementById('subtraction').value;
+const multiply = document.getElementById('multiplication').value;
+const divide = document.getElementById('division').value;
+const exponentiate = document.getElementById('exponents').value;
+
+
 //// Operators
 
 const CALCULATOR = {
 
+  operationValues: {
+    add: document.getElementById('addition').value,
+    subtract: document.getElementById('subtraction').value,
+  },
+
   operators: {
     equation: function (a, b, operator){
       switch (operator) {
-      case "add": return parseFloat(a) + parseFloat(b);
+      case add: return parseFloat(a) + parseFloat(b);
       break;
-      case "subtract": return a - b;
+      case subtract: return a - b;
       break;
-      case "multiply": return a * b;
+      case multiply: return a * b;
       break;
-      case "divide": return a / b;
+      case divide: return a / b;
       break;
-      case "exponentiate": return a ** b;
+      case exponentiate: return a ** b;
       break;
       }
     },
@@ -30,27 +44,27 @@ const CALCULATOR = {
     add: {
       symbol: "+", 
       function: (a,b) => {
-        return CALCULATOR.operators.equation(a,b, "add")}
+        return CALCULATOR.operators.equation(a,b, add)}
           },
     subtract: {
       symbol: "-", 
       function: (a,b) => {
-        return CALCULATOR.operators.equation(a,b, "subtract")}
+        return CALCULATOR.operators.equation(a,b, subtract)}
           },
     multiply: {
       symbol: "x", 
       function: (a,b) => {
-        return CALCULATOR.operators.equation(a,b, "multiply")}
+        return CALCULATOR.operators.equation(a,b, multiply)}
           },
     divide: {
       symbol: "÷", 
       function: (a,b) => {
-        return CALCULATOR.operators.equation(a,b, "divide")}
+        return CALCULATOR.operators.equation(a,b, divide)}
           },
     exponentiate: {
       symbol: "^", 
       function: (a,b) => {
-        return CALCULATOR.operators.equation(a,b, "exponentiate")}
+        return CALCULATOR.operators.equation(a,b, exponentiate)}
           },
 
   },
@@ -122,7 +136,7 @@ const { displayEquation } = CALCULATOR;
 
 
 
-const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
+// const [add, subtract, multiply, divide, exponentiation] = ['+','-','x','÷'];
 
 // DOM Changes
 
