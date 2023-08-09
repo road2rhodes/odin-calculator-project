@@ -2,9 +2,10 @@
 
 // Calculator Display/Input Variables
 
-let num1, num2, operator, result;
-
-num1 = num2 = operator = result = '';
+let num1 = '', 
+    num2 = '', 
+    operator = '', 
+    result = '';
 
 //// Operators
 
